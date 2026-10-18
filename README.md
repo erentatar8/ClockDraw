@@ -33,7 +33,7 @@ Click the clock in your menu bar, mark where you are now and where you need to b
 
 ### Download
 
-1. Grab `ClockDraw.zip` from the [latest release](../../releases/latest), unzip it and move **ClockDraw.app** to `/Applications`.
+1. Download `ClockDraw-x.y.dmg` from the [latest release](../../releases/latest), open it and drag **ClockDraw** into **Applications**.
 2. ClockDraw is not notarized by Apple, so macOS will block it the first time. Either:
    - open it once, then go to **System Settings → Privacy & Security** and click **Open Anyway**, or
    - run this in Terminal:
@@ -52,6 +52,7 @@ zsh build_app.sh            # builds, installs to /Applications and launches
 ```
 
 Use `zsh build_app.sh --no-install` to only produce `ClockDraw.app` in the project folder.
+`zsh make_release.sh 0.3` builds a distributable `ClockDraw-0.3.dmg`.
 
 <details>
 <summary>Working in Xcode</summary>

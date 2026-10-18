@@ -4,6 +4,7 @@
 #   zsh build_app.sh --no-install → sadece proje klasöründe ClockDraw.app üret
 set -e
 cd "$(dirname "$0")"
+VERSION=${VERSION:-0.3}     # dışarıdan verilebilir: VERSION=0.4 zsh build_app.sh
 
 # 1) Release derlemesi: optimizasyonlu, hata ayıklama bilgisi az → küçük ve hızlı
 swift build -c release
@@ -30,7 +31,7 @@ cat > $APP/Contents/Info.plist <<PLIST
   <key>CFBundleIdentifier</key><string>com.erentatar.clockdraw</string>
   <key>CFBundleExecutable</key><string>ClockDraw</string>
   <key>CFBundlePackageType</key><string>APPL</string>
-  <key>CFBundleShortVersionString</key><string>0.3</string>
+  <key>CFBundleShortVersionString</key><string>$VERSION</string>
   <key>CFBundleIconFile</key><string>AppIcon</string>
   <key>LSMinimumSystemVersion</key><string>14.0</string>
   <key>LSUIElement</key><true/>

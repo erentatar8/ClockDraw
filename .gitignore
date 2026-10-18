@@ -3,5 +3,6 @@
 .swiftpm/
 *.app
 *.zip
+*.dmg
 ClockDraw.xcodeproj/
 /Info.plist
