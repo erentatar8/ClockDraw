@@ -1,0 +1,33 @@
+# XcodeGen tarifi: `xcodegen generate` bu dosyadan ClockDraw.xcodeproj üretir.
+# Kaynak dosyalar aynı (Sources/ClockDraw); Package.swift + build_app.sh yolu da çalışmaya devam eder.
+name: ClockDraw
+options:
+  bundleIdPrefix: com.erentatar
+  deploymentTarget:
+    macOS: "14.0"
+targets:
+  ClockDraw:
+    type: application
+    platform: macOS
+    sources:
+      - Sources/ClockDraw
+      - Resources/Assets.xcassets     # uygulama ikonu
+    info:
+      path: Info.plist          # xcodegen bu dosyayı aşağıdaki değerlerle üretir
+      properties:
+        CFBundleName: ClockDraw
+        CFBundleDisplayName: ClockDraw
+        CFBundleShortVersionString: "0.3"
+        CFBundleVersion: "1"
+        LSUIElement: true       # Dock'ta görünme, sadece menü çubuğu
+        LSApplicationCategoryType: public.app-category.productivity
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.erentatar.clockdraw
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SWIFT_VERSION: "5.0"
+        GENERATE_INFOPLIST_FILE: NO
+        # "Sign to Run Locally": sertifikasız ad-hoc imza, Apple hesabı gerekmez
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "-"
+        DEVELOPMENT_TEAM: ""
